@@ -1,4 +1,4 @@
-const dbConn = require('../../database/database');
+const dbConn = require('../config/dbConfig');
 
 const Employee = function (employee) {
   this.first_name = employee.first_name;
@@ -35,9 +35,7 @@ Employee.getEmployeeById = (id, result) => {
 
 // create new employee
 Employee.createNewEmployee = (employeeData, result) => {
-  const {
-    first_name, last_name, age, gender, title,
-  } = employeeData;
+  const { first_name, last_name, age, gender, title } = employeeData;
 
   dbConn.query(
     `INSERT INTO employees (first_name,last_name,age,gender,title) VALUES ('${first_name}','${last_name}',${age},'${gender}','${title}')`,
@@ -59,9 +57,7 @@ Employee.createNewEmployee = (employeeData, result) => {
 
 // update employee
 Employee.updateEmployee = (id, employeeData, result) => {
-  const {
-    first_name, last_name, age, gender, title,
-  } = employeeData;
+  const { first_name, last_name, age, gender, title } = employeeData;
   dbConn.query(
     `UPDATE employees SET first_name = '${first_name}',last_name='${last_name}',age=${age},gender='${gender}',title='${title}' WHERE emp_id=${id}`,
     (err, res) => {

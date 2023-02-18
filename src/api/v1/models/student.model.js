@@ -1,5 +1,5 @@
 // handles data and business logics
-const dbConnection = require('../../database/database');
+const dbConnection = require('../config/dbConfig');
 
 // create student model
 var Student = function (student) {

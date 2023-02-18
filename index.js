@@ -17,9 +17,9 @@ app.get('/', (req, res) => {
 });
 
 //import employee route
-const employeeRoutes = require('./src/routes/employee.route.js');
+const employeeRoutes = require('./src/api/v1/routes/employee.route.js');
 //import student route
-const studentRoutes = require('./src/routes/student.route.js');
+const studentRoutes = require('./src/api/v1/routes/student.route.js');
 
 // create employee route
 app.use('/api/v1/employees/', employeeRoutes);
