@@ -1,4 +1,4 @@
-const dbConn = require('../config/dbConfig');
+const dbConn = require('../../../config/dbConfig');
 
 const Employee = function (employee) {
   this.first_name = employee.first_name;

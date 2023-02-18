@@ -16,16 +16,18 @@ app.get('/', (req, res) => {
   res.send('api is working');
 });
 
-//import employee route
-const employeeRoutes = require('./src/api/v1/routes/employee.route.js');
-//import student route
-const studentRoutes = require('./src/api/v1/routes/student.route.js');
+// //import employee route
+const routes = require('./api/v1/routes');
+app.use('/api', routes);
+// const employeeRoutes = require('./api/v1/routes/employee.route.js');
+// //import student route
+// const studentRoutes = require('./api/v1/routes/student.route.js');
 
-// create employee route
-app.use('/api/v1/employees/', employeeRoutes);
+// // create employee route
+// app.use('/api/v1/employees/', employeeRoutes);
 
-//create student route
-app.use('/api/v1/students/', studentRoutes);
+// //create student route
+// app.use('/api/v1/students/', studentRoutes);
 
 app.listen(port, () => {
   console.log(`Express server running on port ${port}`);
